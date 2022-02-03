@@ -83,9 +83,9 @@ class PetControllerTests {
 	@Test
 	void testPetCreationFormSuccessWithNoDob() throws Exception {
 		PetType typeDog = this.pets.findPetTypes().get(0);
-		mockMvc.perform(post("/owners/{ownerId}/pets/new", TEST_OWNER_ID).param("name", "Sunny")
-			.param("type", typeDog.toString())).andExpect(status().is3xxRedirection())
-			.andExpect(view().name("redirect:/owners/{ownerId}"));
+		mockMvc.perform(post("/owners/{ownerId}/pets/new", TEST_OWNER_ID).param("name", "Sunny").param("type",
+				typeDog.toString())).andExpect(status().is3xxRedirection())
+				.andExpect(view().name("redirect:/owners/{ownerId}"));
 	}
 
 	@Test
